@@ -7,7 +7,7 @@
 
 //   - salvare la risposta dentro una variabile
 
-kmNumber = parseInt(prompt("Quanti km devi percorrere?"));
+const kmNumber = parseInt(prompt("Quanti km devi percorrere?"));
 
 // # chiedere all'utente l'età
 
@@ -21,27 +21,33 @@ const age = parseInt(prompt("Quanti anni hai?"));
 
 //   - creare una variabile basePrice che sarà uguale a 0.21€ * il numero di km inseriti dall'utente
 
-let basePrice = kmNumber * 0.21;
 
-//   - creare una variabile che applichi lo sconto del 20% ai minorenni
+if (isNaN(kmNumber) || isNaN(age)) {
+  document.getElementById("error").innerHTML = "Hai inserito dei valori che non sono corretti";
+} else {
 
-//     - SE l'utente ha inserito un'età minore di 18 allora la variabile basePrice sarà moltiplicata per 20 e divisa per 100
+  let basePrice = kmNumber * 0.21;
 
-//   - creare una variabile che applichi lo sconto del 40% agli over 65
+  //   - creare una variabile che applichi lo sconto del 20% ai minorenni
 
-//     - SE l'utente ha inserito un'età superiore a 65 allora la variabile basePrice sarà moltiplicata per 40 e divisa per 100
-  
-// # Mostrare output del prezzo
+  //     - SE l'utente ha inserito un'età minore di 18 allora la variabile basePrice sarà moltiplicata per 20 e divisa per 100
 
-//   - Stampare a console il prezzo finale del biglietto
+  //   - creare una variabile che applichi lo sconto del 40% agli over 65
 
-if (age < 18 ) {
-  const minorDiscount = (basePrice * 20) / 100;
-  basePrice = basePrice - minorDiscount;
- }
-else if (age > 65) {
- const oldDiscount = (basePrice * 40) / 100;
- basePrice = basePrice - oldDiscount;
+  //     - SE l'utente ha inserito un'età superiore a 65 allora la variabile basePrice sarà moltiplicata per 40 e divisa per 100
+
+  // # Mostrare output del prezzo
+
+  //   - Stampare a console il prezzo finale del biglietto
+
+  if (age < 18) {
+    const minorDiscount = (basePrice * 20) / 100;
+    basePrice = basePrice - minorDiscount;
+  }
+  else if (age > 65) {
+    const oldDiscount = (basePrice * 40) / 100;
+    basePrice = basePrice - oldDiscount;
+  }
+
+  document.getElementById("finalPrice").innerHTML = "Il prezzo del tuo biglietto è di: " + basePrice.toFixed(2) + "€";
 }
-
-document.getElementById("finalPrice").innerHTML = "Il prezzo del tuo biglietto è di: " + basePrice.toFixed(2) + "€";
