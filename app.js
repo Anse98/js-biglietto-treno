@@ -44,4 +44,4 @@ else if (age > 65) {
  basePrice = basePrice - oldDiscount;
 }
 
-document.getElementById("finalPrice").innerHTML = "Il prezzo del tuo biglietto è di: " + basePrice + "€";
+document.getElementById("finalPrice").innerHTML = "Il prezzo del tuo biglietto è di: " + basePrice.toFixed(2) + "€";
