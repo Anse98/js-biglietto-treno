@@ -38,13 +38,10 @@ let basePrice = kmNumber * 0.21;
 if (age < 18 ) {
   const minorDiscount = (basePrice * 20) / 100;
   basePrice = basePrice - minorDiscount;
-  console.log("Il prezzo del tuo biglietto è di: " + basePrice + "€");
  }
 else if (age > 65) {
  const oldDiscount = (basePrice * 40) / 100;
  basePrice = basePrice - oldDiscount;
- console.log("Il prezzo del tuo biglietto è di: " + basePrice + "€");
 }
-else {
-  console.log("Il prezzo del tuo biglietto è di: " + basePrice);
-}
+
+document.getElementById("finalPrice").innerHTML = "Il prezzo del tuo biglietto è di: " + basePrice + "€";
