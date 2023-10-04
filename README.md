@@ -17,7 +17,7 @@
   - creare una variabile basePrice che sarà uguale a 0.21€ * il numero di km inseriti dall'utente
 
   - creare una variabile che applichi lo sconto del 20% ai minorenni
-  
+
     - SE l'utente ha inserito un'età minore di 18 allora la variabile basePrice sarà moltiplicata per 20 e divisa per 100
 
   - creare una variabile che applichi lo sconto del 40% agli over 65
@@ -28,4 +28,3 @@
 
   - Stampare a console il prezzo finale del biglietto
   
-    - creare una variabile finalPrice che corrisponda al prezzo definitivo del biglietto e fare console.log di quella variabile

@@ -7,18 +7,24 @@
 
 //   - salvare la risposta dentro una variabile
 
+kmNumber = parseInt(prompt("Quanti km devi percorrere?"));
+
 // # chiedere all'utente l'età
 
 //   - creare un prompt che chieda all'utente l'età
 
 //   - salvare la risposta dentro una variabile
 
+const age = parseInt(prompt("Quanti anni hai?"));
+
 // # in base alle risposte calcolare il prezzo del biglietto
 
 //   - creare una variabile basePrice che sarà uguale a 0.21€ * il numero di km inseriti dall'utente
 
+let basePrice = kmNumber * 0.21;
+
 //   - creare una variabile che applichi lo sconto del 20% ai minorenni
-  
+
 //     - SE l'utente ha inserito un'età minore di 18 allora la variabile basePrice sarà moltiplicata per 20 e divisa per 100
 
 //   - creare una variabile che applichi lo sconto del 40% agli over 65
@@ -28,5 +34,17 @@
 // # Mostrare output del prezzo
 
 //   - Stampare a console il prezzo finale del biglietto
-  
-//     - creare una variabile finalPrice che corrisponda al prezzo definitivo del biglietto e fare console.log di quella variabile
+
+if (age < 18 ) {
+  const minorDiscount = (basePrice * 20) / 100;
+  basePrice = basePrice - minorDiscount;
+  console.log("Il prezzo del tuo biglietto è di: " + basePrice + "€");
+ }
+else if (age > 65) {
+ const oldDiscount = (basePrice * 40) / 100;
+ basePrice = basePrice - oldDiscount;
+ console.log("Il prezzo del tuo biglietto è di: " + basePrice + "€");
+}
+else {
+  console.log("Il prezzo del tuo biglietto è di: " + basePrice);
+}
